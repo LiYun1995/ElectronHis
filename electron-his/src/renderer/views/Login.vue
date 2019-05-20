@@ -3,21 +3,21 @@
         <div :class="[classNames + '-top']">
             <span :class="[classNames + '-topborder']"></span>
             <div :class="[classNames + '-toptools']">
-                <span :class="[classNames + '-min']">-</span>
-                <span :class="[classNames + '-close']">×</span>
+                <span :class="[classNames + '-min']" @click="minWindow">-</span>
+                <span :class="[classNames + '-close']" @click="closeWindow">×</span>
             </div>
         </div>
         <div :class="[classNames + '-midcontainer']">
             <div :class="[classNames + '-logo']">
-                <img src="../assets/img/signLogin.png">
+                <img src="../assets/img/signLogin.png" ref="logo">
             </div>
             <div :class="[classNames + '-content']">
                 <div :class="[classNames+'-select']">
-                    <router-link to="/input" style="float: left">
+                    <router-link :to="thisRoute" style="float: left" @click="toggleDom">
                         <i class="his-icon-down" @click="toggleDom"></i>
                     </router-link>
                     <span>{{addressNum}}</span>
-                    <router-link to="/chooseAddress" style="float: right">
+                    <router-link :to="thisRoute" style="float: right" @click="toggleDom">
                         <i class="his-icon-address" @click="toggleDom"></i>
                     </router-link>
                 </div>
@@ -42,6 +42,7 @@
     import InputInfo from '../components/login/InputInfo'
     import ChooseAddress from '../components/login/ChooseAddress'
 
+    const {remote,ipcRenderer} = require('electron')
     const classNames = 'his-login'
     export default {
         name: "Login",
@@ -49,13 +50,33 @@
         data() {
             return {
                 classNames: classNames,
-                addressNum: 0
+                addressNum: 0,
+                thisRoute:'/input'
             }
         },
         methods: {
             toggleDom() {
-                console.log(1);
+                if(this.thisRoute === '/input'){
+                    this.thisRoute = '/chooseAddress'
+                }else{
+                    this.thisRoute = '/input'
+                }
+            },
+            minWindow(){
+                remote.getCurrentWindow().minimize();
+            },
+            closeWindow(){
+                remote.getCurrentWindow().close();
             }
+        },
+        computed:{
+
+        },
+        watch:{
+
+        },
+        mounted() {
+
         }
     }
 </script>

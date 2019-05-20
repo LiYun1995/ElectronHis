@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input :class="getClass" :type="this.type" :placeholder="this.placeholder" :style="getStyles" :value="this.value"></input>
+        <input :class="getClass" :type="this.type" :placeholder="this.placeholder" :style="getStyles" v-model="inputInfo" @change="emitFather"></input>
     </div>
 </template>
 
@@ -25,6 +25,11 @@
                 type:String
             }
         },
+        data(){
+            return {
+                inputInfo:''
+            }
+        },
         computed: {
             getClass() {
                 return `${componentsClassName}-${this.type} his-components-inputcommon`
@@ -40,6 +45,11 @@
         },
         mounted() {
             console.log(this.width.split('%').length);
+        },
+        methods:{
+            emitFather(){
+                this.$emit('configEvent',this.inputInfo)
+            }
         }
     }
 </script>
