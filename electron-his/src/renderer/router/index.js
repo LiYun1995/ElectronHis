@@ -15,6 +15,10 @@ export default new Router({
             }, {
                 path: 'chooseAddress',
                 component: require('@/components/login/ChooseAddress').default
+            },
+            {
+                path: '',
+                component: require('@/components/login/InputInfo').default
             }]
         },
         {

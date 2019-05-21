@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input :class="getClass" :type="this.type" :placeholder="this.placeholder" :style="getStyles" v-model="inputInfo" @change="emitFather"></input>
+        <input :class="getClass" :type="this.type" :placeholder="this.placeholder" :style="getStyles" v-model="inputInfo"></input>
     </div>
 </template>
 
@@ -44,10 +44,19 @@
             }
         },
         mounted() {
-            console.log(this.width.split('%').length);
+            // console.log(this.width.split('%').length);
         },
         methods:{
-            emitFather(){
+            // emitFather(){
+            //     // this.$emit('configEvent',this.inputInfo)
+            //     console.log(this.inputInfo);
+            // }
+            // testchange(){
+            //     this.$emit('configEvent',"change")
+            // }
+        },
+        watch:{
+            inputInfo(){
                 this.$emit('configEvent',this.inputInfo)
             }
         }
