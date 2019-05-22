@@ -16,8 +16,10 @@
     import Input from '../common/Input'
     import Button from '../common/Button'
     import axios from 'axios'
+    const ipc = require('electron').ipcRenderer
     const classNames = 'his-login'
     const configAddress = '7.0.0.118:8080/StarTrek'
+    const {remote} = require('electron')
     export default {
         name: "InputInfo",
         components:{Input,Button},
@@ -31,7 +33,7 @@
         },
         methods:{
             login(){
-                console.log(1);
+               /* 登陆 console.log(1);
                 axios.post(`http://${configAddress}/user/checkLogin`,{
                     username:this.userName,
                     password:this.passWord
@@ -39,7 +41,10 @@
                     console.log(response)
                 }).catch(error => {
                     console.log(error)
-                })
+                }) */
+                ipc.send('zqz-show')
+                remote.getCurrentWindow().close()
+                 
             },
             receiveUser(data){
                 this.userName = data
@@ -55,6 +60,9 @@
                     
                 }
             }
+        },
+        mounted(){
+            console.log(remote);
         }
     }
 </script>

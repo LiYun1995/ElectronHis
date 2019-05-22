@@ -24,6 +24,11 @@ export default new Router({
         {
             path: '*',
             redirect: '/'
+        },
+        {
+            path:'/manage',
+            name:'HisManage',
+            component:require('@/views/HisManage').default
         }
     ]
 })

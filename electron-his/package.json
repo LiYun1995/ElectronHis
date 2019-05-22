@@ -1,6 +1,6 @@
 {
   "name": "electron-his",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "LiYun <616852971@qq.com>",
   "description": "An electron-vue project",
   "license": null,
@@ -51,6 +51,7 @@
     }
   },
   "dependencies": {
+    "electron-updater": "^4.0.6",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.0.1",

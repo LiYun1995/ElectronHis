@@ -1,5 +1,5 @@
-import { app, BrowserWindow } from 'electron'
-
+import { app, BrowserWindow, globalShortcut, webContents } from 'electron'
+const ipc = require('electron').ipcMain;
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -9,25 +9,78 @@ if (process.env.NODE_ENV !== 'development') {
 }
 
 let mainWindow
+let presWindow
+// let newwin;
+// ipc.on('add',()=>
+// {
+//     newwin = new BrowserWindow({
+//         width: 600, 
+//         height: 400,
+//         frame:false,
+//         parent: mainWindow, //win是主窗口
+//     })
+//     newwin.loadURL(path.join('file:',__dirname,'new.html')); //new.html是新开窗口的渲染进程
+//     newwin.on('closed',()=>{newwin = null})
+
+// })
+
 const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`
 
-function createWindow () {
+const manageURL = process.env.NODE_ENV === 'development'
+  ? `http://localhost:9080#manage`
+  : `file://${__dirname}/index.html#manage`
+function createWindow() {
   /**
    * Initial window options
    */
+
+  // 检查快捷键是否注册成功
+  // console.log(globalShortcut.isRegistered('CommandOrControl+X'))
+
   mainWindow = new BrowserWindow({
     height: 473,
     useContentSize: true,
     width: 363,
-    frame:false,
-    resizable:false
+    frame: false,
+    resizable: false,
+    backgroundColor: "#d6d6d6",
   })
 
   mainWindow.loadURL(winURL)
+  // mainWindow.openDevTools();
 
-  mainWindow.on('closed', () => {
+  presWindow = new BrowserWindow({
+    show: false,
+  })
+  presWindow.loadURL(manageURL)
+  let contents = presWindow.webContents
+  let mainContents = mainWindow.webContents
+  contents.closeDevTools()
+  mainContents.closeDevTools()
+  //快捷键 const ret = globalShortcut.register('F12', () => {
+  //   mainWindow.webContents.openDevTools()
+  // })
+
+  // if (!ret) {
+  //   console.log('registration failed')
+  // }
+  mainWindow.on('close', () => {
+    // console.log(contents.browserWindowOptions.show)
+    if (!contents.browserWindowOptions.show) {
+      app.quit()
+    }
+  })
+
+  ipc.on('zqz-show', function () {
+    contents.browserWindowOptions.show = true
+    // presWindow.show()
+    presWindow.maximize()
+  })
+
+  ipc.on('closed', function () {
+    presWindow = null
     mainWindow = null
   })
 }
