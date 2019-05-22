@@ -21,10 +21,10 @@
                         <i class="his-icon-address" @click="toggleDom"></i>
                     </router-link>
                 </div>
-                <div class="[classNames + 'userinfo']">
+                <div :class="[classNames + '-userinfo']">
                 <router-view></router-view>
                 </div>
-                <div class="[classNames + 'another']">
+                <div :class="[classNames + '-another']">
                 <router-link to="#">使用USBkey（U盾）证书登陆</router-link>
                 <router-link to="#">无法登陆</router-link>
                 <router-link to="#">帮助与支持中心</router-link>
