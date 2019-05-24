@@ -1,0 +1,45 @@
+const memu = [
+  {
+    name:'LYGG'
+  },
+  {
+    name:'LYGG'
+  },
+  {
+    name:'LYGG'
+  },
+  {
+    name:'LYGG'
+  },
+  {
+    name:'LYGG'
+  },
+  {
+    name:'LYGG'
+  },
+  {
+    name:'LYGG'
+  },
+  {
+    name:'LYGG'
+  },
+  {
+    name:'LYGG'
+  },
+  {
+    name:'LYGG'
+  },
+  {
+    name:'LYGG'
+  },
+  {
+    name:'LYGG'
+  },
+  {
+    name:'LYGG'
+  }
+]
+
+export default{
+  memu
+}

@@ -1,12 +1,14 @@
 <template>
-    <div>
-        <h1>登陆成功!</h1>
+    <div style="width:100%;height:100%">
+        <LeftTree></LeftTree>
     </div>
 </template>
 
 <script>
+import LeftTree from '@/components/manage/LeftTree'
     export default {
-        name: "HisManage"
+        name: "HisManage",
+        components:{LeftTree}
     }
 </script>
 

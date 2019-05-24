@@ -7,6 +7,7 @@ import store from './store'
 import styles from './styles/index.sass'
 import componentStyles from './styles/components.sass'
 import iconStyles from './styles/icon.sass'
+import manageStyles from './styles/manage.sass'
 import 'vx-easyui/dist/themes/default/easyui.css';
 import 'vx-easyui/dist/themes/icon.css';
 import 'vx-easyui/dist/themes/vue.css';
@@ -16,7 +17,7 @@ if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
 Vue.use(EasyUI)
-Vue.use(styles,componentStyles,iconStyles)
+Vue.use(styles,componentStyles,iconStyles,manageStyles)
 /* eslint-disable no-new */
 new Vue({
     components: {App},
