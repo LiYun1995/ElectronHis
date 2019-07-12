@@ -12,12 +12,15 @@ import 'vx-easyui/dist/themes/default/easyui.css';
 import 'vx-easyui/dist/themes/icon.css';
 import 'vx-easyui/dist/themes/vue.css';
 import EasyUI from 'vx-easyui';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
 Vue.use(EasyUI)
 Vue.use(styles,componentStyles,iconStyles,manageStyles)
+Vue.use(ElementUI);
 /* eslint-disable no-new */
 new Vue({
     components: {App},

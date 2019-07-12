@@ -1,0 +1,79 @@
+{
+    "data": {
+        "operation": [
+            {
+                "path": "test1",
+                "component": "test1",
+                "name": "test1",
+                "id": "xxxxxxx",
+                "meta": {
+                    "title": "一级菜单1",
+                    "icon": "tree"
+                }
+            },
+            {
+                "path": "test2",
+                "component": "Layout",
+                "name": "test2",
+                "meta": {
+                    "title": "一级菜单2",
+                    "icon": "tree"
+                },
+                "children": [
+                    {
+                        "path": "test2-1",
+                        "name": "test2-1",
+                        "id": "xxxxxxx",
+                        "component": "test2/test2-1",
+                        "meta": {
+                            "title": "二级菜单1",
+                            "icon": "tree"
+                        }
+                    },
+                    {
+                        "path": "test2-2",
+                        "name": "test2-2",
+                        "id": "xxxxxxx",
+                        "component": "test2/test2-2",
+                        "meta": {
+                            "title": "二级菜单2",
+                            "icon": "tree"
+                        }
+                    },
+                    {
+                        "path": "test2-3",
+                        "name": "test2-3",
+                        "id": "xxxxxxx",
+                        "component": "test2/test2-3",
+                        "meta": {
+                            "title": "二级菜单3",
+                            "icon": "tree"
+                        }
+                    }
+                ]
+            }
+        ],
+        "shortcut": [
+            {
+                "path": "view",
+                "component": "view",
+                "name": "view",
+                "id": "xxxxxxx",
+                "meta": {
+                    "title": "查看",
+                    "icon": "tree"
+                }
+            },
+            {
+                "path": "change",
+                "component": "change",
+                "name": "change",
+                "id": "xxxxxxx",
+                "meta": {
+                    "title": "修改",
+                    "icon": "tree"
+                }
+            }
+        ]
+    }
+}

@@ -21,10 +21,10 @@ export default new Router({
                 component: require('@/components/login/InputInfo').default
             }]
         },
-        {
-            path: '*',
-            redirect: '/'
-        },
+        // {
+        //     path: '*',
+        //     redirect: '/'
+        // },
         {
             path:'/manage',
             name:'HisManage',
