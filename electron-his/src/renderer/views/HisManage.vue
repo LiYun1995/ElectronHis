@@ -1,18 +1,24 @@
 <template>
   <div class="manage-main" style="width:100%;height:100%">
-    <LeftMenu></LeftMenu>
-    <Content></Content>
+    <TopTool></TopTool>
+    <div class="manage-content">
+      <LeftMenu></LeftMenu>
+       <Content></Content>
+    </div>
+    <BottomTool></BottomTool>
   </div>
 </template>
 
 <script>
 import Content from "@/components/manage/Content";
 import LeftMenu from "@/components/manage/LeftMenu";
+import TopTool from "@/components/manage/TopTool";
+import BottomTool from "@/components/manage/BottomTool";
 const routerTable = require("../router/mockTree.json");
 const formatRoutes = require("../router/getRouter");
 export default {
   name: "HisManage",
-  components: { Content, LeftMenu },
+  components: { Content, LeftMenu, TopTool, BottomTool },
   data() {
     return {};
   },
@@ -28,7 +34,7 @@ export default {
   },
   watch: {
     $route(to, from) {
-        console.log(this.$route.path);
+      // console.log(this.$route.path);
     }
   }
 };

@@ -52,7 +52,9 @@ function createWindow() {
   // mainWindow.openDevTools();
 
   presWindow = new BrowserWindow({
-    show: false,
+    useContentSize: true,
+    frame: false,
+    show: false
   })
   presWindow.loadURL(manageURL)
   let contents = presWindow.webContents

@@ -1,14 +1,11 @@
 <template>
-  <div :class="[classNames + '-container']">
-    <el-tabs v-model="editableTabsValue" type="card" closable @tab-remove="removeTab">
-      <el-tab-pane v-for="(item,index) in editableTabs" :label="item.title"></el-tab-pane>
-    </el-tabs>
+  <div :class="[classNames + 'main']">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-const classNames = "his-manage-content";
+const classNames = "hisContent-";
 export default {
   data() {
     return {
@@ -24,8 +21,8 @@ export default {
   },
   watch: {
     $route(to, from) {
-      console.log(this.$route.path);
-      console.log(this.$route.name);
+      // console.log(this.$route.path);
+      // console.log(this.$route.name);
     }
   }
 };

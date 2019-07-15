@@ -15,6 +15,17 @@ export default new Vuex.Store({
   ],
   strict: process.env.NODE_ENV !== 'production',
   state:{
-    tabItems:[]
+    tabItems:[],
+    test:111
+  },
+  mutations:{
+    addTabs(state,item){
+      state.tabItems=state.tabItems.push(item)
+    }
+  },
+  actions:{
+    addTabsFun(context,item){
+      context.commit('addTabs',item)
+    }
   }
 })

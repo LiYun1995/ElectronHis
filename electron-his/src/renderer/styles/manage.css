@@ -1,10 +1,10 @@
 @charset "UTF-8";
-.manage-main {
-  display: flex;
-  justify-content: center;
+/* 左边树菜单 */
+.manage-content {
+  width: 100%;
+  height: 93%;
 }
 
-/* 左边树菜单 */
 .his-manage-leftree-container {
   width: 12%;
   height: 70%;
@@ -33,4 +33,100 @@
   width: 88%;
   height: 70%;
   display: inline-block;
+  background: white;
+}
+
+/* 左边菜单 */
+.lefttree-main {
+  width: 12%;
+  height: 100%;
+  float: left;
+}
+
+.lefttree-main .lefttree-left {
+  width: 12%;
+  height: 100%;
+  background: #ececec;
+  float: left;
+}
+
+.lefttree-main .lefttree-left .lefttree-left-spread {
+  width: 100%;
+  height: 50px;
+  background: orange;
+}
+
+.lefttree-main .lefttree-right {
+  width: 88%;
+  height: 100%;
+  float: right;
+  background: #ececec;
+}
+
+.lefttree-main .lefttree-right .lefttree-right-title {
+  background: #f1f0f0;
+  width: 100%;
+  height: 50px;
+}
+
+.lefttree-main .lefttree-right .lefttree-right-firstlist {
+  list-style: none;
+  width: 100%;
+  margin-top: 77px;
+}
+
+.lefttree-main .lefttree-right .lefttree-right-firstlist li {
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+}
+
+/* 顶部工具栏 */
+.toptool-main {
+  width: 100%;
+  height: 4%;
+  background: #dbdbdb;
+}
+
+.toptool-main .tabs-main {
+  width: 70%;
+  height: 100%;
+  margin-left: 12%;
+}
+
+.toptool-main .tabs-main ul {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+
+.toptool-main .tabs-main ul li {
+  float: left;
+  cursor: pointer;
+  display: inline-block;
+  width: 80px;
+  height: 100%;
+  text-align: center;
+}
+
+.toptool-main .tabs-main ul li:hover {
+  background: white;
+}
+
+/* 底部工具栏 */
+.bottomtool-main {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 3%;
+  background: #dbdbdb;
+}
+
+/* 显示内容区 */
+.hisContent-main {
+  width: 88%;
+  height: 100%;
+  background: white;
+  float: right;
 }
