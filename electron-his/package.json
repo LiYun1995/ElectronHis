@@ -61,7 +61,7 @@
     "vx-easyui": "^1.1.16"
   },
   "devDependencies": {
-    "ajv": "^6.5.0",
+    "ajv": "^6.12.3",
     "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
